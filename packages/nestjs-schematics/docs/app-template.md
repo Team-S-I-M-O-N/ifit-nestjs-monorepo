@@ -40,7 +40,7 @@ By default the generated app will include the following features:
 * A ready to work `.env` file containing pre-filled non-sensitive information
 * A global validation pipe to use `class-validator` to validate incoming data in the controllers.
 * A Ping Module that contains a `database agnostic` service that returns mock data.
-  * > To include a database connection refer to the [prisma recipe](./recipes/prisma)
+  * > To include a database connection refer to the [prisma recipe](./recipes/prisma.md)
 * An opinionated code linter `ts-standard`. For better integration with your development environment and auto-correction feel free to install the VSCode `standard-js` plugin.
 * A custom logger module that uses `@ifit/llama` to log information to `rapid7`.
   * > The default behavior of the `LLAMA_LE_TOKEN` and `LLAMA_LOG_LEVEL` variable still applies. for more information on those, feel free to refer to [llama](https://github.com/ifit/llama)
