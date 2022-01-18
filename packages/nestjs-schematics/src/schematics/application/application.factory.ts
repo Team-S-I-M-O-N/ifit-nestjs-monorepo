@@ -21,10 +21,8 @@ import {
 } from '../defaults'
 import { ApplicationOptions } from './application.schema'
 import { NodePackageInstallTask, RepositoryInitializerTask } from '@angular-devkit/schematics/tasks'
-import { dependencies } from './dependencies'
-import { addPackageJsonDependency } from '../../utils/dependencies.utils'
 
-export type BackendArchitecture = 'REST' | 'GraphQL'
+export type BackendArchitecture = 'REST'
 
 export function main (options: ApplicationOptions): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -76,7 +74,6 @@ function generate (options: ApplicationOptions, path: string): Source {
       ...strings,
       ...options
     }),
-    addDependencies(options.architecture),
     move(path)
   ])
 }
@@ -91,16 +88,5 @@ function addGitIgnore (path: Path): Rule {
     }
 
     tree.create(gitIgnorePath, DEFAULT_GIT_IGNORE)
-  }
-}
-
-function addDependencies (architecture: BackendArchitecture): Rule {
-  return (host: Tree) => {
-    if (architecture === 'GraphQL') {
-      dependencies.forEach((dependency) => {
-        addPackageJsonDependency(host, dependency)
-      })
-    }
-    return host
   }
 }

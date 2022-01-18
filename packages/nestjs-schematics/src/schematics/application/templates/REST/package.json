@@ -43,7 +43,7 @@
     "@types/jest": "27.0.2",
     "@types/node": "^16.0.0",
     "@types/supertest": "^2.0.11",
-    "ifit-nestjs-schematics": "^1.0.0",
+    "@ifit/nestjs-schematics": "^0.0.1",
     "@ifit/conventional-commit": "^4.2.3",
     "jest-mock-extended": "2.0.4",
     "concurrently": "^7.0.0",
