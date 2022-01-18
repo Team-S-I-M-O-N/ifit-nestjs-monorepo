@@ -1,0 +1,8 @@
+{
+  "src/**/*.ts": [
+    "yarn lint"
+  ],
+  "prisma/schema.prisma": [
+    "prisma format"
+  ]
+}

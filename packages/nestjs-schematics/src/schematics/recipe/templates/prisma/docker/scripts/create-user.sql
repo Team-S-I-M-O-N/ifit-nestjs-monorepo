@@ -1,0 +1,4 @@
+CREATE USER postgres WITH PASSWORD 'postgres';
+CREATE DATABASE <%= name %>;
+GRANT ALL PRIVILEGES ON DATABASE <%= name %> TO postgres;
+ALTER USER postgres CREATEDB CREATEROLE;

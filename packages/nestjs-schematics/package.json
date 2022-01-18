@@ -1,0 +1,49 @@
+{
+  "name": "@ifit/nestjs-schematics",
+  "version": "0.0.1",
+  "description": "Schematics library to generate a kick starter NestJS project based on iFIT guidelines",
+  "readmeFilename": "README.md",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*",
+    "collection.json"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "postbuild": "npm run copy:collection && npm run copy:schematics",
+    "copy:collection": "cpx src/collection.json lib && cpx 'src/schematics/**/schema.json' lib/schematics",
+    "copy:schematics": "cpx 'src/schematics/**/templates/**/*.*' lib/schematics && cpx 'src/schematics/**/templates/**/.*' lib/schematics && cpx -p 'src/schematics/**/templates/**/.husky/**' lib/schematics && cpx 'src/schematics/**/templates/**/Dockerfile*' lib/schematics",
+    "lint": "ts-standard --fix",
+    "test": "jest --config=jest.config.js --coverage",
+    "prepare": "yarn build"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "schematics": "./lib/collection.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-S-I-M-O-N/ifit-nestjs-template.git"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^13.1.1",
+    "@angular-devkit/schematics": "^13.1.1",
+    "typescript": "~4.5.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "cpx": "^1.5.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.2",
+    "ts-standard": "^11.0.0"
+  },
+  "ts-standard": {
+    "ignore": [
+      "src/**/templates/**"
+    ]
+  },
+  "resolutions": {
+    "glob-parent": "5.1.2"
+  }
+}

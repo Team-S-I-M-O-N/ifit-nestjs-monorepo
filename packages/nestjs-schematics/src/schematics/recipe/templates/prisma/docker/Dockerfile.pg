@@ -1,0 +1,24 @@
+FROM postgres:13
+
+EXPOSE $DB_PORT
+WORKDIR /root
+RUN chmod -R g+rwx /root
+RUN usermod -aG root postgres
+RUN apt-get update && apt-get -y install curl socat
+
+
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash -
+
+ENV NVM_DIR "/root/.nvm"
+
+COPY .nvmrc ./postgres-db/
+RUN \. "$NVM_DIR/nvm.sh" && nvm install $(cat postgres-db/.nvmrc) && nvm alias default $(cat postgres-db/.nvmrc) \
+    && npm i -g yarn@1.12.3 \
+    && npm i --prefix=/root/postgres-db --no-save dotenv dotenv-cli
+
+USER postgres
+RUN echo "export PATH=\$PATH:$NVM_DIR/versions/node/v$(cat postgres-db/.nvmrc)/bin" >> "$HOME/.bashrc"
+
+USER root
+COPY ./docker/scripts ./postgres-db/scripts
+RUN mv ./postgres-db/scripts/* /docker-entrypoint-initdb.d/

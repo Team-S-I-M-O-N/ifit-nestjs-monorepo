@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchemaRecipe",
+  "title": "Recipes",
+  "type": "object",
+  "properties": {
+    "recipe": {
+      "type": "string",
+      "description": "Recipe of the application",
+      "enum": ["prisma"],
+      "x-prompt": {
+        "message": "which recipe would you like to use?",
+        "type": "list",
+        "items": [
+          { "value": "prisma",  "label": "Prisma" }
+        ]
+      }
+    }
+  },
+  "required": ["recipe"]
+}

@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+#Description
+#https://git-scm.com/docs/githooks#_post_checkout
+#This hook is invoked when a git-checkout[1] or git-switch[1] is run after having updated the worktree.
+
+# The variable changing_branches can be either 0 or 1
+# 1 stands for changing branches.
+# 0 stands for a file checkout.
+changing_branches=$3
+
+if [ $changing_branches -eq 1 ]; then
+  yarn install
+fi

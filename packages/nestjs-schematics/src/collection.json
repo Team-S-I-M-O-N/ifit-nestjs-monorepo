@@ -1,0 +1,17 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "application": {
+      "factory": "./schematics/application/application.factory#main",
+      "description": "Create an iFIT application.",
+      "schema": "./schematics/application/schema.json",
+      "aliases": ["app", "a"]
+    },
+    "recipe": {
+      "factory": "./schematics/recipe/recipe.factory#main",
+      "description": "Setup the basic configuration for the database layer",
+      "schema": "./schematics/recipe/schema.json",
+      "aliases": ["rec", "r"]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsNestApplication-iFIT",
+  "title": "Nest Application Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the application.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the new project?"
+    },
+    "author": {
+      "type": "string",
+      "description": "Application author.",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "description": "Application description.",
+      "default": ""
+    },
+    "directory": {
+      "type": "string",
+      "description": "Application destination directory."
+    },
+    "version": {
+      "type": "string",
+      "description": "Application version.",
+      "default": "1.0.0"
+    }
+  },
+  "required": ["name"]
+}
