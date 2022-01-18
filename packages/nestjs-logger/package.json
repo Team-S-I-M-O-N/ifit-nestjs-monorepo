@@ -1,0 +1,25 @@
+{
+  "name": "@ifit/nestjs-logger",
+  "version": "0.0.1",
+  "description": "NestJS Module that includes logger functionality ported from @ifit/llama",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "rimraf lib && tsc",
+    "prepublish": "npm run build"
+  },
+  "author": "iFit",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "@ifit/llama": "^1.6.0",
+    "@nestjs/common": "^8.2.5",
+    "@nestjs/core": "^8.2.5",
+    "reflect-metadata": "^0.1.13"
+  }
+}
