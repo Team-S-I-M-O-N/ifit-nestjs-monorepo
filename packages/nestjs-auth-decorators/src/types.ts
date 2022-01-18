@@ -16,10 +16,10 @@ export enum FLOW {
 }
 
 export enum TIER {
-  LVL_0,
-  LVL_1,
-  LVL_2,
-  LVL_3
+  LEVEL_0,
+  LEVEL_1,
+  LEVEL_2,
+  LEVEL_3
 }
 
 export enum SCOPE {
