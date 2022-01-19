@@ -14,6 +14,9 @@
     "branches": ["main"],
     "extends": "semantic-release-monorepo"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "iFit",
   "license": "MIT",
   "devDependencies": {
