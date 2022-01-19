@@ -1,5 +1,5 @@
 {
-  "name": "@ifit/nestjs-auth-decorators",
+  "name": "@simon/nestjs-auth-decorators",
   "version": "0.0.1",
   "description": "Auth guard and decorators intended to use Janus validation inside NestJS",
   "main": "lib/index.js",

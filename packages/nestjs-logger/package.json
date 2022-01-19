@@ -1,5 +1,5 @@
 {
-  "name": "@ifit/nestjs-logger",
+  "name": "@simon/nestjs-logger",
   "version": "0.0.1",
   "description": "NestJS Module that includes logger functionality ported from @ifit/llama",
   "main": "lib/index.js",

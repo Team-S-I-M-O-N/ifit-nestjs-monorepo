@@ -1,5 +1,5 @@
 {
-  "name": "@ifit/nestjs-schematics",
+  "name": "@simon/nestjs-schematics",
   "version": "0.0.1",
   "description": "Schematics library to generate a kick starter NestJS project based on iFIT guidelines",
   "readmeFilename": "README.md",
