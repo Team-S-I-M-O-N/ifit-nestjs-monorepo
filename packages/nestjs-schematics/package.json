@@ -21,10 +21,6 @@
     "schematics"
   ],
   "schematics": "./lib/collection.json",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Team-S-I-M-O-N/ifit-nestjs-template.git"
-  },
   "dependencies": {
     "@angular-devkit/core": "^13.1.1",
     "@angular-devkit/schematics": "^13.1.1",
