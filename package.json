@@ -9,8 +9,16 @@
   "description": "A collection of packages to help you get started with NestJS in the ifit ecosystem",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@ifit/conventional-commit": "^4.2.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "ts-standard": "^11.0.0"
   },
   "author": "iFit",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/Team-S-I-M-O-N/ifit-nestjs-monorepo.git"
 }
