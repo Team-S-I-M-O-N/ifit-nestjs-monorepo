@@ -1,6 +1,7 @@
 {
   "name": "ifit-nestjs",
   "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
