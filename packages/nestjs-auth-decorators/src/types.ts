@@ -6,8 +6,7 @@ export interface AuthUserAccount {
 
 export enum ACL {
   ADMIN = 'admin',
-  DEVELOPER = 'developer',
-  TEST = 'test'
+  DEVELOPER = 'developer'
 }
 
 export enum FLOW {
