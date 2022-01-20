@@ -7,5 +7,5 @@ export interface RecipeOptions {
   recipe: RecipeEnum
 
   // application name
-  name?: string
+  name: string
 }

@@ -7,12 +7,13 @@
     "recipe": {
       "type": "string",
       "description": "Recipe of the application",
-      "enum": ["prisma"],
+      "enum": ["prisma", "authorization"],
       "x-prompt": {
         "message": "which recipe would you like to use?",
         "type": "list",
         "items": [
-          { "value": "prisma",  "label": "Prisma" }
+          { "value": "prisma",  "label": "Prisma" },
+          { "value": "authorization",  "label": "Authorization decorators" }
         ]
       }
     }

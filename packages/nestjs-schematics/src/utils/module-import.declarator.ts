@@ -2,10 +2,12 @@ import { normalize, Path } from '@angular-devkit/core'
 import { DeclarationOptions } from './module.declarator'
 import { PathSolver } from './path.solver'
 
+export type ModuleImportOptions = DeclarationOptions & { externalPackage?: boolean, nameExternalPackage?: string}
+
 export class ModuleImportDeclarator {
   constructor (private readonly solver: PathSolver = new PathSolver()) {}
 
-  public declare (content: string, options: DeclarationOptions): string {
+  public declare (content: string, options: ModuleImportOptions): string {
     const toInsert = this.buildLineToInsert(options)
     const contentLines = content.split('\n')
     const finalImportIndex = this.findImportsEndpoint(contentLines)
@@ -24,7 +26,11 @@ export class ModuleImportDeclarator {
     return contentLines.indexOf(reverseImports[0])
   }
 
-  private buildLineToInsert (options: DeclarationOptions): string {
+  private buildLineToInsert (options: ModuleImportOptions): string {
+    if (options.externalPackage === true) {
+      return `import { ${options.symbol ?? ''} } from '${options.nameExternalPackage}'`
+    }
+
     return `import { ${options.symbol ?? ''} } from '${this.computeRelativePath(
       options
     )}'`

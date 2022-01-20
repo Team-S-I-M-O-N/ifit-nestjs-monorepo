@@ -1,5 +1,6 @@
 import { Path } from '@angular-devkit/core'
 import { capitalize, classify } from '@angular-devkit/core/src/utils/strings'
+import { ModuleImportOptions } from '.'
 import { ModuleImportDeclarator } from './module-import.declarator'
 import { ModuleMetadataDeclarator } from './module-metadata.declarator'
 

@@ -27,7 +27,7 @@ describe.skip('Recipe Factory', () => {
   ]
 
   it('should generate files needed for the prisma recipe', async () => {
-    const options: RecipeOptions = {
+    const options: Partial<RecipeOptions> = {
       recipe: RecipeEnum.Prisma
     }
 
