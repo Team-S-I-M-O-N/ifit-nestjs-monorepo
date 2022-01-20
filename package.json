@@ -24,12 +24,14 @@
   "author": "iFit",
   "license": "MIT",
   "devDependencies": {
-    "semantic-release": "^19.0.2",
-    "semantic-release-monorepo": "^7.0.5",
-    "ts-standard": "^11.0.0",
     "@nestjs/common": "^8.2.5",
     "@nestjs/core": "^8.2.5",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.5.2"
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.5.2",
+    "semantic-release": "^19.0.2",
+    "semantic-release-monorepo": "^7.0.5",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.5.5"
   }
 }
