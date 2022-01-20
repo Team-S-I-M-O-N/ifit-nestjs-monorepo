@@ -9,7 +9,7 @@
     "collection.json"
   ],
   "scripts": {
-    "build": "rm -rf lib && tsc",
+    "build": "rm -rf lib && tsc --project tsconfig.build.json",
     "postbuild": "npm run copy:collection && npm run copy:schematics",
     "copy:collection": "cpx src/collection.json lib && cpx 'src/schematics/**/schema.json' lib/schematics",
     "copy:schematics": "cpx 'src/schematics/**/templates/**/*.*' lib/schematics && cpx 'src/schematics/**/templates/**/.*' lib/schematics && cpx -p 'src/schematics/**/templates/**/.husky/**' lib/schematics && cpx 'src/schematics/**/templates/**/Dockerfile*' lib/schematics",
