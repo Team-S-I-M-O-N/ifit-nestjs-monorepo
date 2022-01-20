@@ -6,7 +6,7 @@ export class PingController {
   constructor (private readonly pingService: PingService) {}
 
   @Get()
-  pongs (): Record<string, unknown>[] {
+  pongs (): Array<Record<string, unknown>> {
     return this.pingService.pongs()
   }
 

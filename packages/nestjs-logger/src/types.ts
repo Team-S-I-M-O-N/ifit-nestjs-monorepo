@@ -1,4 +1,4 @@
-import { ModuleMetadata, Type } from "@nestjs/common";
+import { ModuleMetadata, Type } from '@nestjs/common'
 
 export interface LoggerConfigOptions {
   projectName: string
@@ -7,16 +7,16 @@ export interface LoggerConfigOptions {
 }
 
 export interface LoggerOptionsFactory {
-  createLoggerConfigOptions(): Promise<LoggerConfigOptions> | LoggerConfigOptions
+  createLoggerConfigOptions: () => Promise<LoggerConfigOptions> | LoggerConfigOptions
 }
 
 export interface LoggerConfigOptionsAsync extends Pick<ModuleMetadata, 'imports'> {
-  inject?: any[];
-  useExisting?: Type<LoggerOptionsFactory>;
-  useClass?: Type<LoggerOptionsFactory>;
+  inject?: any[]
+  useExisting?: Type<LoggerOptionsFactory>
+  useClass?: Type<LoggerOptionsFactory>
   useFactory?: (
     ...args: any[]
-  ) => Promise<LoggerConfigOptions> | LoggerConfigOptions;
+  ) => Promise<LoggerConfigOptions> | LoggerConfigOptions
 }
 
 export const LOGGER_OPTIONS = 'LOGGER_OPTIONS'

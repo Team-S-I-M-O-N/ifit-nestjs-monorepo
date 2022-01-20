@@ -1,17 +1,17 @@
 import {
   SchematicTestRunner,
-  UnitTestTree,
-} from '@angular-devkit/schematics/testing';
-import * as path from 'path';
-import { ApplicationOptions } from './application.schema';
+  UnitTestTree
+} from '@angular-devkit/schematics/testing'
+import * as path from 'path'
+import { ApplicationOptions } from './application.schema'
 
 describe('Application Factory', () => {
   const runner: SchematicTestRunner = new SchematicTestRunner(
     '.',
-    path.join(process.cwd(), 'src/collection.json'),
-  );
+    path.join(process.cwd(), 'src/collection.json')
+  )
 
-  let expectedFiles = [
+  const expectedFiles = [
     '.husky/.gitignore',
     '.husky/_/.gitignore',
     '.husky/_/husky.sh',
@@ -43,42 +43,42 @@ describe('Application Factory', () => {
     'src/env.validation.ts',
     'test/app.e2e-spec.ts',
     'test/jest-e2e.json'
-  ];
+  ]
 
-  function getFullPathOfExpectedFiles(projectName: string): string[] {
-    return expectedFiles.map( file => `/${projectName}/${file}`).sort()
+  function getFullPathOfExpectedFiles (projectName: string): string[] {
+    return expectedFiles.map(file => `/${projectName}/${file}`).sort()
   }
 
   it('should manage name only', async () => {
     const options: ApplicationOptions = {
       name: 'project',
       architecture: 'REST'
-    };
+    }
 
-    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise();
-    const files: string[] = tree.files;
-    expect(files.sort()).toEqual(getFullPathOfExpectedFiles(options.name));
-  });
+    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise()
+    const files: string[] = tree.files
+    expect(files.sort()).toEqual(getFullPathOfExpectedFiles(options.name))
+  })
 
   it('should manage name to dasherize', async () => {
     const options: ApplicationOptions = {
       name: 'awesomeProject',
       architecture: 'REST'
-    };
-    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise();
-    const files: string[] = tree.files;
-    expect(files.sort()).toEqual(getFullPathOfExpectedFiles("awesome-project"));
-  });
+    }
+    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise()
+    const files: string[] = tree.files
+    expect(files.sort()).toEqual(getFullPathOfExpectedFiles('awesome-project'))
+  })
 
   it('should manage destination directory', async () => {
-    const directory = 'scope-package';
+    const directory = 'scope-package'
     const options: ApplicationOptions = {
       name: '@scope/package',
       architecture: 'REST',
       directory
-    };
-    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise();
-    const files: string[] = tree.files;
-    expect(files.sort()).toEqual(getFullPathOfExpectedFiles(directory));
-  });
-});
+    }
+    const tree: UnitTestTree = await runner.runSchematicAsync('application', options).toPromise()
+    const files: string[] = tree.files
+    expect(files.sort()).toEqual(getFullPathOfExpectedFiles(directory))
+  })
+})

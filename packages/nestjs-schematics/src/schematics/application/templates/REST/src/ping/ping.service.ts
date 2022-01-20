@@ -12,7 +12,7 @@ export class PingService {
     }
   }
 
-  pongs (): Record<string, unknown>[] {
+  pongs (): Array<Record<string, unknown>> {
     return [{
       id: 1,
       echo: 'Pong'

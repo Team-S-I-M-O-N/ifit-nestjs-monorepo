@@ -8,10 +8,14 @@
   "description": "A collection of packages to help you get started with NestJS in the ifit ecosystem",
   "main": "index.js",
   "scripts": {
-    "release": "yarn workspaces run semantic-release"
+    "release": "yarn workspaces run semantic-release",
+    "build": "yarn workspaces run build",
+    "lint": "ts-standard --fix $(git diff main origin/main --name-only | grep -E '.(ts)$')"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "extends": "semantic-release-monorepo"
   },
   "publishConfig": {
@@ -21,6 +25,11 @@
   "license": "MIT",
   "devDependencies": {
     "semantic-release": "^19.0.2",
-    "semantic-release-monorepo": "^7.0.5"
+    "semantic-release-monorepo": "^7.0.5",
+    "ts-standard": "^11.0.0",
+    "@nestjs/common": "^8.2.5",
+    "@nestjs/core": "^8.2.5",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.2"
   }
 }
